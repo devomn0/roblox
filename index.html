@@ -9,6 +9,7 @@
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -16,12 +17,27 @@
         }
         iframe {
             width: 90%;
-            height: 90vh;
+            height: 80vh;
             border: none;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
+    <input type="text" id="search-bar" placeholder="Rechercher...">
     <iframe src="https://www.roblox.com/home" allowfullscreen></iframe>
+    
+    <script>
+        document.getElementById("search-bar").addEventListener("input", function(event) {
+            console.log("Recherche: ", event.target.value);
+        });
+    </script>
 </body>
 </html>
